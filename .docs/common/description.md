@@ -1,0 +1,1 @@
+This modules main feature is that it allows you to include markdown files into other markdown files.  For example, you could place the following into a markdown file:

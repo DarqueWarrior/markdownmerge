@@ -1,0 +1,41 @@
+TOPIC
+   Markdown Merge
+
+SHORT DESCRIPTION
+   This module was inspired by the markdown-include npm module that allows you
+   to include markdown files in other markdown files. This is great for when
+   you are creating documents with a lot of common content.
+
+LONG DESCRIPTION
+   When using PlatyPS to generate help for your PowerShell module a lot of your
+   markdown looks the same. I wanted to be able to write the common markdown
+   once and simply include it in the other files before processing it with 
+   PlatyPS to generate my *-Help.xml file for my module.
+
+   The -InPath must exist. Only *.md files in the top level folder will be 
+   processed. Any sub folders will be ignored. 
+
+   The -OutPath folder will be created if it does not exist.  If it does exist
+   any files in the folder with the same name of a final file will be
+   overwritten.
+
+   Files are read from -InPath and any include tags found are replaced by the
+   contents of the file included.  Include tags are as follows. 
+
+   <!-- #include "./common/header.md" -->
+
+   Note the #include tag is inside a single line comment. This allows this to
+   be ignored by any other markdown processing and prevents linters from
+   logging warnings or errors.
+
+EXAMPLES
+   Merge-Markdown -InPath .\.docs -OutPath .\docs
+
+   This will read all the files in .docs and process any include tags found.
+   The final file with the same name will be written to the docs folder. 
+
+KEYWORDS
+    Markdown, PlatyPS, Help
+
+SEE ALSO
+    PlatyPS
