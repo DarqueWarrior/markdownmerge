@@ -70,6 +70,6 @@ At that point it will start over in the original file and parse other include ta
 
 ## Release Notes
 
-### 0.1
+### 0.0.1
 
 Initial release.
