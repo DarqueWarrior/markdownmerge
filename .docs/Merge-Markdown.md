@@ -4,7 +4,7 @@
 
 ## SYNOPSIS
 
-<!-- #include "./synopsis/Merge-Markdown.md" -->
+<!-- #include "c:/users/dlbm3/source/repos/markdownmerge/.docs/synopsis/Merge-Markdown.md" -->
 
 ## SYNTAX
 

@@ -71,7 +71,7 @@
     <command:returnValues />
     <maml:alertSet>
       <maml:alert>
-        <maml:para>## RELATED LINKS</maml:para>
+        <maml:para></maml:para>
       </maml:alert>
     </maml:alertSet>
     <command:examples />

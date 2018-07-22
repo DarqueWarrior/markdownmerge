@@ -21,7 +21,7 @@ foreach ($file in $files) {
 Set-Content -Path files.md -Value $sb.ToString()
 
 Write-Output 'Merging Markdown files'
-markdown-include $PSScriptRoot $PSScriptRoot\..\docs
+merge-markdown $PSScriptRoot $PSScriptRoot\..\docs
 
 Write-Output 'Creating new file'
 Import-Module platyPS -Force
@@ -34,11 +34,10 @@ Rename-Item -Path .\common\header.md -NewName header.txt
 Set-Content -Path .\common\header.md -Value ''
 
 # Docs now don't have headers
-markdown-include $PSScriptRoot $PSScriptRoot\..\docs
+merge-markdown $PSScriptRoot $PSScriptRoot\..\docs
 
 # Put header back
 Remove-Item .\common\header.md
 Rename-Item -Path .\common\header.txt -NewName header.md -Force
 
 Remove-Item ..\docs\files.md
-Remove-Item ..\docs\gen-help.ps1

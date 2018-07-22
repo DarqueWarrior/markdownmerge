@@ -1,6 +1,6 @@
 # Markdown Merge
 
-This is a port of the npm module markdown-include. The functions in this module allow you to include markdown files into other markdown files using a C style include syntax.
+This is a port of the npm module markdown-include. The functions in this module allow you to include markdown files into other markdown files using a C style include syntax inside a single line comment.
 
 ## Merge your markdown files
 
@@ -68,11 +68,8 @@ markdown merge will first read the contents of `README.md` and look for include 
 
 At that point it will start over in the original file and parse other include tags if they exist.  Along the way, markdown merge will parse each file and keep a record of the contents.  Once the process is finished, a file will be written in `README.md` with all of the compiled content.
 
+## Release Notes
 
-**NOTE**:  You must provide markdown merge with the entire file path you're trying to find in your working directory.  For example, if `first-file.md` and `third-file.md` were in the `docs` directory together and `first-file.md` was trying to include `third-file.md` you would need to do the following in `first-file.md`:
+### 0.1
 
-```Markdown
-<!-- #include "docs/third-file.md" -->
-```
-
-This is because markdown merge doesn't make any assumptions about where your files are.  Use the correct paths or you could run into errors!
+Initial release.
