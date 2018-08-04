@@ -10,7 +10,7 @@
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>Processes the files in -InPath and stores the final files in -OutPath.</maml:para>
+      <maml:para>Merges markdown files in -InPath and stores the final files in -OutPath.</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>

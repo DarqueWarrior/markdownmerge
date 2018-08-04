@@ -1,5 +1,10 @@
 # Markdown Merge
 
+[![Build status](https://loecda.visualstudio.com/markdownmerge/_apis/build/status/markdownmerge-CI)](https://loecda.visualstudio.com/markdownmerge/_build/latest?definitionId=49)
+[![Deployment status](https://loecda.vsrm.visualstudio.com/_apis/public/Release/badge/35d956a5-10d6-4273-85a1-d672ce2bf980/1/1)](https://loecda.visualstudio.com/markdownmerge/_releases2?definitionId=1&view=mine&_a=releases)
+[![PowerShell Gallery - PowerShellGet](https://img.shields.io/badge/PowerShell%20Gallery-MarkdownMerge-blue.svg)](https://www.powershellgallery.com/packages/markdownmerge/)
+[![Minimum Supported PowerShell Version](https://img.shields.io/badge/PowerShell-5.0-blue.svg)](https://github.com/PowerShell/PowerShellGet)
+
 This is a port of the npm module markdown-include. The functions in this module allow you to include markdown files into other markdown files using a C style include syntax inside a single line comment.
 
 ## Merge your markdown files
@@ -17,11 +22,11 @@ And assuming that `header.md` contents are:
 # Header
 ```
 
-And assuming that `Add-VSTeamAccount.md` contents are: 
+And assuming that `Add-VSTeamAccount.md` contents are:
 
 ```Markdown
 Description of Add-VSTeamAccount
-``` 
+```
 
 It would compile to:
 
@@ -34,7 +39,7 @@ Description of Add-VSTeamAccount
 
 This will also allow linters to ignore these lines and not log errors or warnings.
 
-# How To Install
+## How To Install
 
 markdown merge is available in the PowerShell gallery for easy installation:
 
@@ -42,15 +47,15 @@ markdown merge is available in the PowerShell gallery for easy installation:
 Install-Module markdown merge
 ```
 
-# How To Use
+## How To Use
 
-To process files simply provide a folder of files to be processed (inPath) and a folder to placed the processed files in (outPath). 
+To process files simply provide a folder of files to be processed (inPath) and a folder to placed the processed files in (outPath).
 
 ```PowerShell
 merge-markdown -inPath .\.docs -outPath .\docs
 ```
 
-# How It Works
+## How It Works
 
 markdown merge works by recursively going through files based on the tags that are found.  For instance, consider the following in a `README.md` file:
 
@@ -64,12 +69,14 @@ Let's also consider that `first-file.md` contains the following:
 <!-- #include "third-file.md" -->
 ```
 
-markdown merge will first read the contents of `README.md` and look for include tags.  It will find `<!-- #include "first-file.md" -->` first.  From there it will parse the tag, open `first-file.md` and find include tags in that file.  This process continues until no more include tags are found.  
+markdown merge will first read the contents of `README.md` and look for include tags.  It will find `<!-- #include "first-file.md" -->` first.  From there it will parse the tag, open `first-file.md` and find include tags in that file.  This process continues until no more include tags are found.
 
 At that point it will start over in the original file and parse other include tags if they exist.  Along the way, markdown merge will parse each file and keep a record of the contents.  Once the process is finished, a file will be written in `README.md` with all of the compiled content.
 
-## Release Notes
+## Contributors
 
-### 0.0.1
+[Guidelines](.github/CONTRIBUTING.md)
 
-Initial release.
+## Change Log
+
+[Change Log](CHANGELOG.md)

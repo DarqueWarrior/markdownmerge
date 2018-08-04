@@ -4,13 +4,13 @@
 
 ## SYNOPSIS
 
-<!-- #include "c:/users/dlbm3/source/repos/markdownmerge/.docs/synopsis/Merge-Markdown.md" -->
+<!-- #include "./synopsis/Merge-Markdown.md" -->
 
 ## SYNTAX
 
 ## DESCRIPTION
 
-<!-- #include "./synopsis/Merge-Markdown.md" -->
+Merges markdown files in -InPath and stores the final files in -OutPath.
 
 ## EXAMPLES
 

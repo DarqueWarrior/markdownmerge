@@ -1,26 +1,17 @@
----
-external help file: MarkdownMerge-Help.xml
-Module Name: MarkdownMerge
-online version:
-schema: 2.0.0
----
+
+
 
 # Merge-Markdown
 
 ## SYNOPSIS
 
----
-external help file: MarkdownMerge-Help.xml
-Module Name: MarkdownMerge
-online version:
-schema: 2.0.0
----
+Processes the files in -InPath and stores the final files in -OutPath.
 
 ## SYNTAX
 
 ## DESCRIPTION
 
-Processes the files in -InPath and stores the final files in -OutPath.
+Merges markdown files in -InPath and stores the final files in -OutPath.
 
 ## EXAMPLES
 
