@@ -44,7 +44,7 @@ This will also allow linters to ignore these lines and not log errors or warning
 markdown merge is available in the PowerShell gallery for easy installation:
 
 ```PowerShell
-Install-Module markdown merge
+Install-Module markdownmerge -Scope CurrentUser
 ```
 
 ## How To Use
@@ -80,3 +80,11 @@ At that point it will start over in the original file and parse other include ta
 ## Change Log
 
 [Change Log](CHANGELOG.md)
+
+## Maintainers
+
+- [Donovan Brown](https://github.com/darquewarrior) - [@DonovanBrown](https://twitter.com/DonovanBrown)
+
+## License
+
+This project is [licensed under the MIT License](LICENSE).
