@@ -67,5 +67,3 @@ function _process {
       return $content
    }
 }
-
-Export-ModuleMember -Function Merge-Markdown

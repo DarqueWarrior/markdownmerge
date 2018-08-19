@@ -10,10 +10,10 @@
 @{
 
    # Script module or binary module file associated with this manifest.
-   # RootModule = ''
+   RootModule = 'Trackyon.Markdown.psm1'
 
    # Version number of this module.
-   ModuleVersion     = '0.0.2'
+   ModuleVersion     = '0.0.3'
 
    # Supported PSEditions
    # CompatiblePSEditions = @()
@@ -25,7 +25,7 @@
    Author            = '@DonovanBrown'
 
    # Company or vendor of this module
-   CompanyName       = ''
+   CompanyName       = 'Trackyon LLC'
 
    # Copyright statement for this module
    Copyright         = '(c) 2018 Donovan Brown. All rights reserved.'
@@ -67,9 +67,7 @@
    # FormatsToProcess = @()
 
    # Modules to import as nested modules of the module specified in RootModule/ModuleToProcess
-   NestedModules     = @(
-      '.\src\MarkdownMerge.psm1'
-   )
+   # NestedModules     = @()
 
    # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
    FunctionsToExport = @(
@@ -80,10 +78,10 @@
    # CmdletsToExport = @()
 
    # Variables to export from this module
-   VariablesToExport = '*'
+   # VariablesToExport = '*'
 
    # Aliases to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no aliases to export.
-   AliasesToExport   = @()
+   # AliasesToExport   = @()
 
    # DSC resources to export from this module
    # DscResourcesToExport = @()
@@ -106,7 +104,7 @@
          # LicenseUri = ''
 
          # A URL to the main website for this project.
-         ProjectUri = 'https://github.com/DarqueWarrior/markdownmerge'
+         # ProjectUri = ''
 
          # A URL to an icon representing this module.
          # IconUri = ''
