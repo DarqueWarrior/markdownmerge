@@ -49,19 +49,21 @@ function _process {
       $r = [regex]'<!\-\-\s#include\s"([^"]+)"\s\-\->'
       $content = Get-Content -Path $file.FullName -Raw
 
-      $m = $r.Matches($content)
-
-      while ($m.Count) {
-         $includedFile = $m.Groups[1]
-
-         # Regardless if it is relative or absolute this will fix the path
-         $includedFile = [System.IO.Path]::GetFullPath((Join-Path $file.Directory $includedFile))
-
-         $newContent = _process -file $includedFile
-
-         $content = $content.Replace($m.Groups[0], $newContent)
-
+      if ($null -ne $content) {
          $m = $r.Matches($content)
+
+         while ($m.Count) {
+            $includedFile = $m.Groups[1]
+
+            # Regardless if it is relative or absolute this will fix the path
+            $includedFile = [System.IO.Path]::GetFullPath((Join-Path $file.Directory $includedFile))
+
+            $newContent = _process -file $includedFile
+
+            $content = $content.Replace($m.Groups[0], $newContent)
+
+            $m = $r.Matches($content)
+         }
       }
 
       return $content

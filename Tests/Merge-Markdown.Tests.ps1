@@ -62,6 +62,25 @@ Describe 'Process files' -Tag 'process', 'unit' {
       }
    }
 
+   # Null is not the same as empty string
+   Context 'Process $null' {
+      Mock Test-Path { return $true } -ParameterFilter { $Path -eq '.\realFolderInPath' } -Verifiable
+      Mock Test-Path { return $true } -ParameterFilter { $Path -eq '.\missingOutPath' } -Verifiable
+      Mock Test-Path { throw "Wrong call to Test-Path: $args" }
+      Mock Get-ChildItem { return @(
+            [System.IO.FileInfo]::new('.\realFolderInPath\test.md')
+         )
+      } -Verifiable
+      Mock Get-Content { } -Verifiable
+      Mock Set-Content { } -Verifiable
+
+      Merge-Markdown -InPath '.\realFolderInPath' -OutPath '.\missingOutPath'
+
+      It 'Should write empty file' {
+         Assert-VerifiableMock
+      }
+   }
+
    Context 'Process file' {
       Mock Test-Path { return $true } -ParameterFilter { $Path -eq '.\realFolderInPath' } -Verifiable
       Mock Test-Path { return $true } -ParameterFilter { $Path -eq '.\missingOutPath' } -Verifiable
