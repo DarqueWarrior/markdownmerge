@@ -58,6 +58,7 @@ function _process {
             # Regardless if it is relative or absolute this will fix the path
             $includedFile = [System.IO.Path]::GetFullPath((Join-Path $file.Directory $includedFile))
 
+            Write-Verbose "Processing included file $includedFile"
             $newContent = _process -file $includedFile
 
             $content = $content.Replace($m.Groups[0], $newContent)

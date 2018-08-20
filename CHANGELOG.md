@@ -3,6 +3,7 @@
 ## 0.0.4
 
 Fixed issue when Get-Content returned $null
+Added more verbose logging.
 
 ## 0.0.3
 
